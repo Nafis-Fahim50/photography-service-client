@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Signup = () => {
+
+    const {createUser} = useContext(AuthContext);
 
     const handleSignup = event =>{
         event.preventDefault();
@@ -11,6 +15,17 @@ const Signup = () => {
         const password = form.password.value;
         const userInfo = {name,email,password}
         // console.log(userInfo);
+
+        createUser(email,password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            toast.success('Successfully Signup');
+            form.reset();
+        })
+        .catch(err =>{
+            toast.error(err.message)
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
