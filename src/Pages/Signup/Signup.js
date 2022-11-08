@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Signup = () => {
 
-    const {createUser,userProfileUpdate} = useContext(AuthContext);
+    const {createUser,userProfileUpdate, loading} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    if(loading){
+        return <button className="btn loading mx-auto my-12 ml-96">loading</button>
+    }
 
     const handleSignup = event =>{
         event.preventDefault();
@@ -25,6 +30,7 @@ const Signup = () => {
             toast.success('Successfully Signup');
             form.reset();
             handleUpdateUser(name,photoURL);
+            navigate('/login')
         })
         .catch(err =>{
             toast.error(err.message)

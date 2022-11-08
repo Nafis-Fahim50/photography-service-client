@@ -2,13 +2,20 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {login,providerLogin} = useContext(AuthContext);
+    const {login,providerLogin,loading} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
+    if(loading){
+        return <button className="btn loading mx-auto my-12 ml-96">loading</button>
+    }
 
     const handleGoogleLogin = () =>{
         providerLogin(googleProvider)
@@ -16,6 +23,7 @@ const Login = () => {
             const user = result.user;
             console.log(user)
             toast.success('Successfully login with Google');
+            navigate(from,{replace:true});
         })
         .catch(err =>{
             toast.error(err.message)
@@ -27,14 +35,13 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const userInfo = {email,password}
-        // console.log(userInfo);
         login(email,password)
         .then(result =>{
             const user = result.user;
             console.log(user);
             form.reset();
             toast.success('Successfully Login')
+            navigate(from,{replace:true});
         })
         .catch(err =>{
             toast.error(err.message);

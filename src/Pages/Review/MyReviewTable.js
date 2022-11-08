@@ -12,7 +12,7 @@ const MyReviewTable = ({ review, handleDeleted }) => {
     }, [service])
 
     return (
-        <tr>
+        <tr className='hover'>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">

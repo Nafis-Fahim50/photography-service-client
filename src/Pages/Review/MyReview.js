@@ -40,7 +40,7 @@ const MyReview = () => {
                     <p>Your haven't submit any reviews yet.</p>
                 }
             </div>
-            <table className="table w-full">
+            <table className="table-normal lg:table w-full">
                 <thead>
                     <tr>
                         <th>Customer Name</th>
