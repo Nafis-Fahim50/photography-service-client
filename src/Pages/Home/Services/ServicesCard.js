@@ -13,7 +13,7 @@ const ServicesCard = ({ service }) => {
                 </h2>
                 <p className='text-left'>{description.slice(0, 100)}...</p>
                 <div className="card-actions justify-between">
-                    <div className="">
+                    <div>
                         <img className='w-10 rounded-full' src={photographer_url} alt="" />
                     </div>
                     <div className="badge badge-outline mt-2">{photographer}</div>
