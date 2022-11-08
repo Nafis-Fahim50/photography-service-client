@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 
-const MyReviewTable = ({ review }) => {
-    const { name, email, rating, photoURL, serviceName, description, service } = review;
+const MyReviewTable = ({ review, handleDeleted }) => {
+    const { name, email, _id, rating, photoURL, serviceName, description, service } = review;
 
     const [reviewService, setReviewService] = useState({})
     useEffect(() => {
@@ -42,7 +42,7 @@ const MyReviewTable = ({ review }) => {
             <td>{description}</td>
             <th>
                 <button className="btn btn-ghost font-semibold text-yellow-400">Edit</button>
-                <button className="btn btn-ghost font-semibold text-red-600">Delete</button>
+                <button onClick={()=>handleDeleted(_id)} className="btn btn-ghost font-semibold text-red-600">Delete</button>
             </th>
         </tr>
     );

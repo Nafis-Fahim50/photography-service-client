@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import MyReviewTable from './MyReviewTable';
 
@@ -11,6 +12,24 @@ const MyReview = () => {
             .then(res => res.json())
             .then(data => setMyReview(data))
     }, [user?.email])
+
+    const handleDeleted = id =>{
+        const processed = window.confirm('Are you sure to delete this item?');
+        if(processed){
+            fetch(`http://localhost:5000/userReview/${id}`,{
+                method: 'DELETE'
+            })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount>0){
+                toast.success('Successfully deleted item');
+                const remaining = myreview.filter(rev => rev._id !== id);
+                setMyReview(remaining);
+            }
+        })   
+
+        }
+    }
 
     return (
         <div className="overflow-x-auto w-full">
@@ -34,7 +53,8 @@ const MyReview = () => {
                     {
                         myreview.map(review=><MyReviewTable
                         key={review._id}
-                        review={review}></MyReviewTable>)
+                        review={review}
+                        handleDeleted={handleDeleted}></MyReviewTable>)
                     }
                 </tbody>
             </table>
