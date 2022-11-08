@@ -10,15 +10,21 @@ const Header = () => {
     const menuItems = <>
         <li className='lg:text-white'>
             {
-                user?.uid?
-                <>
-                    <p className='text-orange-500 font-bold'>Welcome <span className='text-green-500'>{user?.email}</span></p>
-                </>
-                :
-                <></>
+                user?.uid ?
+                    <>
+                        <div className="avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={user?.photoURL} alt='' />
+                            </div>
+                        </div>
+                        <p className='text-orange-500 p-0 font-bold'>Welcome {user?.displayName}</p>
+                    </>
+                    :
+                    <></>
             }
             <Link to='/'>Home</Link>
             <Link to='/services'>Services</Link>
+            <Link to='/blog'>Blog</Link>
             {
                 user?.uid ?
                     <>

@@ -7,7 +7,7 @@ const VideoGraphy = () => {
             <p className='text-orange-500'>Videography</p>
             <h3 className='lg:text-3xl text-2xl font-bold'>See My Videography</h3>
             <div className='mt-7'>
-                <video className='mx-auto rounded-lg lg:w-1/2' src={video} controls="controls" autoplay="false" />
+                <video className='mx-auto rounded-lg lg:w-1/2' src={video} controls/>
             </div>
         </div>
     );
