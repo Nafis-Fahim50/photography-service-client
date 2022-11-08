@@ -3,6 +3,7 @@ import './App.css';
 import Main from './Layout/Main';
 import Home from './Pages/Home/Home/Home';
 import Services from './Pages/Home/Services/Services';
+import Login from './Pages/Login/Login';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
           path:'/services/:id',
           element:<ServiceDetails></ServiceDetails>,
           loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path:'/login',
+          element:<Login></Login>
         }
       ]
     }
