@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     const menuItems = <>
-        <li className='text-white'>
+        <li className='lg:text-white'>
             <Link to='/'>Home</Link>
             <Link to='/services'>Services</Link>
         </li>

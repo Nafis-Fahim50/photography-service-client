@@ -10,7 +10,7 @@ const ServiceDetails = () => {
             <div className='container mx-auto'>
                 <h1 className='mt-10 text-2xl font-bold text-orange-500'><span className='text-rose-500'>{title}</span> Photograhy Details Info. </h1>
                 <div className="card lg:card-side bg-base-100 mt-10 shadow-xl">
-                    <img className='rounded-lg' src={img} alt="Album" />
+                    <img className='rounded-lg lg:w-1/2' src={img} alt="Album" />
                     <div className="card-body">
                         <h2 className="card-title">{title}</h2>
                         <p className='text-left'>{description}</p>
