@@ -4,7 +4,7 @@ import logo from '../../../images/logo.png'
 
 const Footer = () => {
     return (
-        <footer className="footer p-16 bg-neutral text-neutral-content">
+        <footer className="footer p-16 mt-10 bg-neutral text-neutral-content">
             <div>
                 <img className='w-44' src={logo} alt="" />
                 <p>Nafis Photographpy Ltd.</p>
