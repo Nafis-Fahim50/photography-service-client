@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FaSignOutAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import logo from '../../../images/logo.png'
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
+
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext);
+
     const menuItems = <>
         <li className='lg:text-white'>
+            {
+                user?.uid?
+                <>
+                    <p className='text-orange-500 font-bold'>Welcome <span className='text-green-500'>{user?.email}</span></p>
+                </>
+                :
+                <></>
+            }
             <Link to='/'>Home</Link>
             <Link to='/services'>Services</Link>
-            <Link to='/signup'>Signup</Link>
-            <Link to='/login'>Login</Link>
+            {
+                user?.uid ?
+                    <>
+                        <Link to='/review'>My Reviews</Link>
+                        <Link to='/'>My Service</Link>
+                        <Link onClick={logout} to='/login'><button className='bg-red-600 p-2 rounded-md'><FaSignOutAlt className='inline mr-1'></FaSignOutAlt>Logout</button></Link>
+                    </>
+                    :
+                    <>
+                        <Link to='/signup'>Signup</Link>
+                        <Link to='/login'>Login</Link>
+                    </>
+            }
+
         </li>
     </>
     return (
@@ -22,9 +46,9 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-white text-xl"><img className='w-32' src={logo} alt="" /></Link>
+                <Link to='/' className="btn btn-ghost normal-case text-orange-500 text-xl">Nafis Photography</Link>
             </div>
-            <div className="navbar-end hidden lg:flex">
+            <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
