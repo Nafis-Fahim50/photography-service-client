@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaStar } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 import ClientReview from './ClientReview';
 
 const ServiceDetails = () => {
+    const {user} = useContext(AuthContext);
     const details = useLoaderData();
     const { title, _id, img, description, price, rating, photographer, photographer_url } = details;
-
+    
     const [review,setReview] = useState([])
 
     useEffect(()=>{
@@ -14,6 +17,12 @@ const ServiceDetails = () => {
         .then(res => res.json())
         .then(data => setReview(data))
     },[])
+
+    const handleMessage = () =>{
+       if(!user){
+            toast.error('Please login at first')
+       }
+    }
 
     return (
         <div>
@@ -47,11 +56,12 @@ const ServiceDetails = () => {
                     {
                         review.map(rev =><ClientReview
                         key={rev._id}
-                        rev={rev}></ClientReview>)
+                        rev={rev}
+                        ></ClientReview>)
                     }
                 </div>
                 <Link to={`/review/${_id}`}>
-                    <button className='bg-green-500 p-3 mt-5 rounded-lg text-white'>Add Your Review</button>
+                    <button onClick={handleMessage} className='bg-green-500 p-3 mt-5 rounded-lg text-white'>Add Your Review</button>
                 </Link>
             </div>
         </div>

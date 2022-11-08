@@ -1,8 +1,7 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
-const ClientReview = ({ rev }) => {
-    // console.log(rev)
+const ClientReview = ({ rev}) => {
     const { rating, comment, description, name, photoURL} = rev;
     return (
         <div className='mt-5'>

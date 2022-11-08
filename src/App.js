@@ -5,9 +5,11 @@ import Main from './Layout/Main';
 import Home from './Pages/Home/Home/Home';
 import Services from './Pages/Home/Services/Services';
 import Login from './Pages/Login/Login';
+import MyReview from './Pages/Review/MyReview';
 import ReviewFrom from './Pages/Review/ReviewFrom';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Signup from './Pages/Signup/Signup';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
@@ -38,7 +40,12 @@ function App() {
         },
         {
           path:'/review/:id',
-          element:<ReviewFrom></ReviewFrom>
+          element:<PrivateRoute><ReviewFrom></ReviewFrom></PrivateRoute>,
+          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path:'/myreview',
+          element:<PrivateRoute><MyReview></MyReview></PrivateRoute>
         }
       ]
     }
