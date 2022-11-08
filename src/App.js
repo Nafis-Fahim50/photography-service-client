@@ -2,6 +2,7 @@ import { Toaster } from 'react-hot-toast';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Main from './Layout/Main';
+import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home/Home/Home';
 import Services from './Pages/Home/Services/Services';
 import Login from './Pages/Login/Login';
@@ -46,6 +47,10 @@ function App() {
         {
           path:'/myreview',
           element:<PrivateRoute><MyReview></MyReview></PrivateRoute>
+        },
+        {
+          path:'/blog',
+          element:<Blog></Blog>
         }
       ]
     }
