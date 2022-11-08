@@ -5,6 +5,7 @@ import Main from './Layout/Main';
 import Home from './Pages/Home/Home/Home';
 import Services from './Pages/Home/Services/Services';
 import Login from './Pages/Login/Login';
+import ReviewFrom from './Pages/Review/ReviewFrom';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Signup from './Pages/Signup/Signup';
 
@@ -34,12 +35,16 @@ function App() {
         {
           path:'/signup',
           element:<Signup></Signup>
+        },
+        {
+          path:'/review/:id',
+          element:<ReviewFrom></ReviewFrom>
         }
       ]
     }
   ])
   return (
-    <div className="App">
+    <div className="">
       <RouterProvider router={router}></RouterProvider>
       <Toaster></Toaster>
     </div>

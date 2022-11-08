@@ -12,7 +12,7 @@ const Services = () => {
 
     return (
         <div>
-            <h1 className='mt-10 text-2xl font-bold text-orange-500'>See All My Photography Services</h1>
+            <h1 className='mt-10 text-2xl text-center font-bold text-orange-500'>See All My Photography Services</h1>
             <div className='cotainer mx-auto grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10'>
                 {
                     services.map(service => <ServicesCard
