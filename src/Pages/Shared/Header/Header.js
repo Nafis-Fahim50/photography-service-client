@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../images/logo.png'
 
 const Header = () => {
     const menuItems = <>
@@ -9,7 +10,7 @@ const Header = () => {
         </li>
     </>
     return (
-        <div className="navbar bg-zinc-500">
+        <div className="navbar bg-gray-500 py-2">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,7 +20,7 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-white text-xl">Nafis Photography</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-white text-xl"><img className='w-32' src={logo} alt="" /></Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

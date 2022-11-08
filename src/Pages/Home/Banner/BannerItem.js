@@ -22,7 +22,7 @@ const BannerItem = ({ slider }) => {
                 </p>
             </div>
             <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 mt-16 lg:mt-40 top-1/4">
-                <button className="p-2 lg:p-3 mt-24 rounded  bg-orange-500 text-black mr-5">Contract Me</button>
+                <button className="p-2 lg:p-3 mt-24 rounded-lg font-semibold bg-orange-500 text-black mr-5">Contact Me</button>
             </div>
         </div>
     );

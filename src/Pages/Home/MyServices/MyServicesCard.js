@@ -8,7 +8,7 @@ const MyServicesCard = ({ myService }) => {
             <figure><img src={img} alt="Shoes" /></figure>
             <div className="card-body text-left">
                 <h2 className="card-title">Service Name: {title}</h2>
-                <p>Price: ${price}</p>
+                <p className='font-semibold'>Price: ${price}</p>
                 <div className="card-actions ">
                     <Link to='/services'>
                         <button className="btn btn-primary">Show All</button>
