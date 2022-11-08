@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
@@ -5,7 +6,21 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {login} = useContext(AuthContext);
+    const {login,providerLogin} = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleLogin = () =>{
+        providerLogin(googleProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+            toast.success('Successfully login with Google');
+        })
+        .catch(err =>{
+            toast.error(err.message)
+        })
+    }
 
     const handleLogin = event => {
         event.preventDefault();
@@ -36,7 +51,7 @@ const Login = () => {
                     <p className='my-2 text-orange-500 font-bold'>OR</p>
                     <hr />
                     <div>
-                        <button className='bg-red-500 hover:bg-red-600 text-white p-3 mt-2 rounded-lg'><FaGoogle className='inline mb-1'></FaGoogle> Login With Google</button>
+                        <button onClick={handleGoogleLogin} className='bg-red-500 hover:bg-red-600 text-white p-3 mt-2 rounded-lg'><FaGoogle className='inline mb-1'></FaGoogle> Login With Google</button>
                     </div>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
