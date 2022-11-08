@@ -29,7 +29,7 @@ const Signup = () => {
     }
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content gap-10 flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl text-yellow-400 font-bold">Signup now!</h1>
                     <p className="py-6">Don't have an account? Then create a new account. By opening a account you can explore more features. On the other hand you don't purchase any services without an account and missed many features.</p>

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const {login} = useContext(AuthContext);
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -10,10 +14,20 @@ const Login = () => {
         const password = form.password.value;
         const userInfo = {email,password}
         // console.log(userInfo);
+        login(email,password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+            form.reset();
+            toast.success('Successfully Login')
+        })
+        .catch(err =>{
+            toast.error(err.message);
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content gap-10 flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl text-blue-600 font-bold">Login now!</h1>
                     <p className="py-6">Login your account to access more features and submit your review.</p>
