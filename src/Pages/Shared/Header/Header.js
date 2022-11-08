@@ -7,6 +7,8 @@ const Header = () => {
         <li className='lg:text-white'>
             <Link to='/'>Home</Link>
             <Link to='/services'>Services</Link>
+            <Link to='/signup'>Signup</Link>
+            <Link to='/login'>Login</Link>
         </li>
     </>
     return (

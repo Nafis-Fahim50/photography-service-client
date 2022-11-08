@@ -1,28 +1,24 @@
 import React from 'react';
-import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
-    const handleLogin = event => {
-        event.preventDefault();
-        const form = event.target;
-    }
+const Signup = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl text-blue-600 font-bold">Login now!</h1>
-                    <p className="py-6">Login your account to access more features and submit your review.</p>
-                    <p>Don't Have an Account?</p>
-                    <Link to='/signup' className='text-blue-600 font-semibold'>Create an Account</Link>
-                    <p className='my-2 text-orange-500 font-bold'>OR</p>
-                    <hr />
-                    <div>
-                        <button className='bg-red-500 hover:bg-red-600 text-white p-3 mt-2 rounded-lg'><FaGoogle className='inline mb-1'></FaGoogle> Login With Google</button>
-                    </div>
+                    <h1 className="text-5xl text-yellow-400 font-bold">Signup now!</h1>
+                    <p className="py-6">Don't have an account? Then create a new account. By opening a account you can explore more features. On the other hand you don't purchase any services without an account and missed many features.</p>
+                    <p className='font-semibold'>Already Have an Account?</p>
+                    <Link to='/login' className='text-blue-600 font-semibold'>Login your account</Link>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleLogin} className="card-body">
+                    <form className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name='name' placeholder="Name" className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -34,12 +30,9 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="Password" className="input input-bordered" required />
-                            <label className="label">
-                                <Link  className="label-text-alt link link-hover">Forgot password?</Link>
-                            </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-warning">Signup</button>
                         </div>
                     </form>
                 </div>
@@ -48,4 +41,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;
