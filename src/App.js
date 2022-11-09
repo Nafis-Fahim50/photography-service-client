@@ -9,6 +9,7 @@ import Services from './Pages/Home/Services/Services';
 import Login from './Pages/Login/Login';
 import MyReview from './Pages/Review/MyReview';
 import ReviewFrom from './Pages/Review/ReviewFrom';
+import Update from './Pages/Review/Update/Update';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Signup from './Pages/Signup/Signup';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -30,7 +31,7 @@ function App() {
         {
           path:'/services/:id',
           element:<ServiceDetails></ServiceDetails>,
-          loader: ({params})=> fetch(`https://nafis-photography-server.vercel.app/services/${params.id}`)
+          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path:'/login',
@@ -43,7 +44,7 @@ function App() {
         {
           path:'/review/:id',
           element:<PrivateRoute><ReviewFrom></ReviewFrom></PrivateRoute>,
-          loader: ({params})=> fetch(`https://nafis-photography-server.vercel.app/services/${params.id}`)
+          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
         },
         {
           path:'/myreview',
@@ -56,6 +57,10 @@ function App() {
         {
           path:'/addservice',
           element:<PrivateRoute><AddService></AddService></PrivateRoute>
+        },
+        {
+          path:'/update',
+          element:<PrivateRoute><Update></Update></PrivateRoute>
         }
       ]
     }

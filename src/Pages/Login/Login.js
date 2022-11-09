@@ -28,7 +28,7 @@ const Login = () => {
                     email: user.email
                 }
                 // get jwt token from server
-                fetch('https://nafis-photography-server.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -60,7 +60,7 @@ const Login = () => {
                     email: user.email
                 }
                 // get jwt token from server
-                fetch('https://nafis-photography-server.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

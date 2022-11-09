@@ -10,23 +10,27 @@ const AddService = () => {
     const handleAddService = event =>{
         event.preventDefault();
         const form = event.target;
-        const username = user?.displayName || 'unregistered'
+        const photographer = user?.displayName || 'unregistered'
         const email = user?.email || 'unregistered'
-        const userPhotoURL = user?.photoURL || 'unregistered'
+        const photographer_url = user?.photoURL || 'unregistered'
         const title = form.title.value;
-        const servicePhotoURL = form.serviceURL.value;
+        const img = form.serviceURL.value;
+        const rating = form.rating.value;
+        const price = form.price.value;
         const description = form.description.value;
         
         const serviceInfo = {
-            username,
+            photographer,
             email,
-            userPhotoURL,
+            photographer_url,
             title,
-            servicePhotoURL,
-            description
+            img,
+            description,
+            rating,
+            price
         }
 
-        fetch('https://nafis-photography-server.vercel.app/addservice', {
+        fetch('http://localhost:5000/allservices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -58,6 +62,8 @@ const AddService = () => {
                 <input type="text" placeholder="photoURL" defaultValue={user?.photoURL} name='userPhotoURL' className="input mt-2 input-bordered w-full" />
 
                 <input type="text" placeholder="Service Title" name='title' className="input mt-2 input-bordered w-full" />
+                <input type="text" placeholder="price" name='price' className="input mt-2 input-bordered w-full" />
+                <input type="text" placeholder="rating" name='rating' className="input mt-2 input-bordered w-full" />
 
                 <input type="text" placeholder="Service Image URL" name='serviceURL' className="input mt-2 input-bordered w-full" />
 

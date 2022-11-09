@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     const [review,setReview] = useState([])
 
     useEffect(()=>{
-        fetch('https://nafis-photography-server.vercel.app/review')
+        fetch('http://localhost:5000/review')
         .then(res => res.json())
         .then(data => setReview(data))
     },[])

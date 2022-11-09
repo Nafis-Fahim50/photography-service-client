@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MyReviewTable = ({ review, handleDeleted }) => {
     const { name, email, _id, rating, photoURL, serviceName, description, service } = review;
 
     const [reviewService, setReviewService] = useState({})
     useEffect(() => {
-        fetch(`https://nafis-photography-server.vercel.app/services/${service}`)
+        fetch(`http://localhost:5000/services/${service}`)
             .then(res => res.json())
             .then(data => setReviewService(data))
     }, [service])
@@ -41,7 +42,7 @@ const MyReviewTable = ({ review, handleDeleted }) => {
             </td>
             <td>{description}</td>
             <th>
-                <button className="btn btn-ghost font-semibold text-yellow-400">Edit</button>
+                <Link to='/update'><button className="btn btn-ghost font-semibold text-yellow-400">Edit</button></Link>
                 <button onClick={()=>handleDeleted(_id)} className="btn btn-ghost font-semibold text-red-600">Delete</button>
             </th>
         </tr>
