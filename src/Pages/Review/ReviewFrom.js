@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const ReviewFrom = () => {
     const { user } = useContext(AuthContext);
     const services = useLoaderData();
+    useTitle('Add Review')
     const { title, _id } = services;
 
     const handleReviewSubmit = event => {

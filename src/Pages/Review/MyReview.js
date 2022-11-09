@@ -1,17 +1,28 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import MyReviewTable from './MyReviewTable';
 
 const MyReview = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     const [myreview, setMyReview] = useState([]);
+    useTitle('My Review')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userReview?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/userReview?email=${user?.email}`,{
+            headers:{
+                authorization:`Bearer ${localStorage.getItem('access-token')}`
+            }
+        })
+            .then(res => {
+                if(res.status === 401 || res.status === 403){
+                    return logout();
+                }
+                return res.json()
+            })
             .then(data => setMyReview(data))
-    }, [user?.email])
+    }, [user?.email, logout])
 
     const handleDeleted = id =>{
         const processed = window.confirm('Are you sure to delete this item?');

@@ -3,11 +3,13 @@ import toast from 'react-hot-toast';
 import { FaStar } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import ClientReview from './ClientReview';
 
 const ServiceDetails = () => {
     const {user} = useContext(AuthContext);
     const details = useLoaderData();
+    useTitle('Service Details')
     const { title, _id, img, description, price, rating, photographer, photographer_url } = details;
     
     const [review,setReview] = useState([])
