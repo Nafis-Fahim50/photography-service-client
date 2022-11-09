@@ -29,7 +29,7 @@ const Header = () => {
                 user?.uid ?
                     <>
                         <Link to='/myreview'>My Reviews</Link>
-                        <Link to='/'>My Service</Link>
+                        <Link to='/addservice'>Add Service</Link>
                         <Link onClick={logout} to='/login'><button className='bg-red-600 p-2 rounded-md'><FaSignOutAlt className='inline mr-1'></FaSignOutAlt>Logout</button></Link>
                     </>
                     :
