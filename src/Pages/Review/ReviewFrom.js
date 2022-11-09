@@ -31,7 +31,7 @@ const ReviewFrom = () => {
             description
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://nafis-photography-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -54,7 +54,7 @@ const ReviewFrom = () => {
             <h3 className='text-2xl text-orange-500 text-center font-bold'>Submit Your Review</h3>
             <p className='text-center mt-2'>Service ID: {_id}</p>
             <p className='text-center'>Service Name: {title}</p>
-            <form onSubmit={handleReviewSubmit} className='bg-zinc-200 p-10 w-1/2 container mx-auto mt-5 shadow-lg rounded-lg mb-10'>
+            <form onSubmit={handleReviewSubmit} className='bg-zinc-200 p-10 w-full lg:w-1/2 container mx-auto mt-5 shadow-lg rounded-lg mb-10'>
                 <input type="text" placeholder="name" defaultValue={user?.displayName} name='name' className="input  input-bordered w-full" />
                 <input type="email" placeholder="email" defaultValue={user?.email} name='email' className="input mt-2 input-bordered w-full" />
                 <input type="text" placeholder="photoURL" defaultValue={user?.photoURL} name='photoURL' className="input mt-2 input-bordered w-full" />

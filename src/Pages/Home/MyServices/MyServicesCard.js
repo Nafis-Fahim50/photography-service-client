@@ -5,7 +5,7 @@ const MyServicesCard = ({ myService }) => {
     const { title, img, price } = myService;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={img} alt="Shoes" /></figure>
+            <figure><img src={img} alt="bride-pic" /></figure>
             <div className="card-body text-left">
                 <h2 className="card-title">Service Name: {title}</h2>
                 <p className='font-semibold'>Price: ${price}</p>

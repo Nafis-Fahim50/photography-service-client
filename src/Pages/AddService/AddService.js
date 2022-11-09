@@ -26,7 +26,7 @@ const AddService = () => {
             description
         }
 
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://nafis-photography-server.vercel.app/addservice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -46,10 +46,10 @@ const AddService = () => {
     return (
         <div>
             <h1 className='mt-10 text-center text-orange-500 text-2xl font-bold'>Add your own service that you want!!!</h1>
-            <p className='w-1/2 mx-auto mt-2'>Here I am providing a form where you can choice your own services. If your services is avaliable then I will contract you as soon as possible. So, if you want to customize service then at first you should sumbit this service form. You can see your service in our website. Visit our home page to see your added service. Not only you but aslo on the main page you can aslo see other user customize services.</p>
+            <p className='w-full lg:w-1/2 lg:mx-auto p-2 mt-2 text-justify'>Here I am providing a form where you can choice your own services. If your services is avaliable then I will contract you as soon as possible. So, if you want to customize service then at first you should sumbit this service form. You can see your service in our website. Visit our home page to see your added service. Not only you but aslo on the main page you can aslo see other user customize services.</p>
             <h1 className='mt-5 text-2xl text-green-600 font-extrabold text-center'>Sumbit this Service Form</h1>
 
-            <form onSubmit={handleAddService} className='bg-zinc-200 p-10 w-1/2 container mx-auto mt-5 shadow-lg rounded-lg mb-10'>
+            <form onSubmit={handleAddService} className='bg-zinc-200 p-10 w-full lg:w-1/2 container mx-auto mt-5 shadow-lg rounded-lg mb-10'>
 
                 <input type="text" placeholder="name" defaultValue={user?.displayName} name='name' className="input  input-bordered w-full" />
 

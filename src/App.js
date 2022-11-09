@@ -30,7 +30,7 @@ function App() {
         {
           path:'/services/:id',
           element:<ServiceDetails></ServiceDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params})=> fetch(`https://nafis-photography-server.vercel.app/services/${params.id}`)
         },
         {
           path:'/login',
@@ -43,7 +43,7 @@ function App() {
         {
           path:'/review/:id',
           element:<PrivateRoute><ReviewFrom></ReviewFrom></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+          loader: ({params})=> fetch(`https://nafis-photography-server.vercel.app/services/${params.id}`)
         },
         {
           path:'/myreview',

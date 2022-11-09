@@ -4,7 +4,7 @@ import MyServicesCard from './MyServicesCard';
 const MyServices = () => {
     const [myServices, setMyServices] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://nafis-photography-server.vercel.app/services')
         .then(res => res.json())
         .then(data => setMyServices(data))
     },[])

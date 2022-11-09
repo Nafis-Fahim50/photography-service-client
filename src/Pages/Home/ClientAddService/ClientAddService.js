@@ -5,7 +5,7 @@ const ClientAddService = () => {
     const [userService, setUserService] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/addservice')
+        fetch('https://nafis-photography-server.vercel.app/addservice')
             .then(res => res.json())
             .then(data => setUserService(data))
     }, [])
