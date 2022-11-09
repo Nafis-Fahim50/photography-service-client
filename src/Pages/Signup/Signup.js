@@ -35,6 +35,7 @@ const Signup = () => {
         })
         .catch(err =>{
             toast.error(err.message)
+            window.location.reload(false);
         })
     }
 

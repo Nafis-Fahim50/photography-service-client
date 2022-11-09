@@ -54,7 +54,6 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 form.reset();
                 toast.success('Successfully Login')
                 const currentUser = {
@@ -76,6 +75,7 @@ const Login = () => {
             })
             .catch(err => {
                 toast.error(err.message);
+                window.location.reload(false);
             })
     }
     return (
