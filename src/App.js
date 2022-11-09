@@ -59,8 +59,9 @@ function App() {
           element:<PrivateRoute><AddService></AddService></PrivateRoute>
         },
         {
-          path:'/update',
-          element:<PrivateRoute><Update></Update></PrivateRoute>
+          path:'/update/:id',
+          element:<PrivateRoute><Update></Update></PrivateRoute>,
+          loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
         }
       ]
     }

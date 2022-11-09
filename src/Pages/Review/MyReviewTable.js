@@ -42,7 +42,7 @@ const MyReviewTable = ({ review, handleDeleted }) => {
             </td>
             <td>{description}</td>
             <th>
-                <Link to='/update'><button className="btn btn-ghost font-semibold text-yellow-400">Edit</button></Link>
+                <Link to={`/update/${_id}`}><button className="btn btn-ghost font-semibold text-yellow-400">Edit</button></Link>
                 <button onClick={()=>handleDeleted(_id)} className="btn btn-ghost font-semibold text-red-600">Delete</button>
             </th>
         </tr>

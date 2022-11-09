@@ -52,15 +52,17 @@ const ReviewFrom = () => {
     return (
         <div className='mt-10'>
             <h3 className='text-2xl text-orange-500 text-center font-bold'>Submit Your Review</h3>
-            <p className='text-center mt-2'>Service ID: {_id}</p>
-            <p className='text-center'>Service Name: {title}</p>
+            <div className='text-blue-500'>
+                <p className='text-center mt-2'>Service ID: {_id}</p>
+                <p className='text-center'>Service Name: {title}</p>
+            </div>
             <form onSubmit={handleReviewSubmit} className='bg-zinc-200 p-10 w-full lg:w-1/2 container mx-auto mt-5 shadow-lg rounded-lg mb-10'>
-                <input type="text" placeholder="name" defaultValue={user?.displayName} name='name' className="input  input-bordered w-full" />
-                <input type="email" placeholder="email" defaultValue={user?.email} name='email' className="input mt-2 input-bordered w-full" />
-                <input type="text" placeholder="photoURL" defaultValue={user?.photoURL} name='photoURL' className="input mt-2 input-bordered w-full" />
-                <input type="text" placeholder="rating out of 5" name='rating' className="input mt-2 input-bordered w-full" />
-                <input type="text" placeholder="comment" name='comment' className="input mt-2 input-bordered w-full" />
-                <textarea className="textarea textarea-bordered w-full mt-2 h-32" name='description' placeholder="description"></textarea>
+                <input type="text" placeholder="name" defaultValue={user?.displayName} name='name' readOnly className="input  input-bordered w-full text-red-500" />
+                <input type="email" placeholder="email" defaultValue={user?.email} name='email' readOnly className="input mt-2 input-bordered w-full  text-red-500" />
+                <input type="text" placeholder="photoURL" defaultValue={user?.photoURL} name='photoURL' readOnly className="input mt-2 input-bordered  text-red-500 w-full" />
+                <input type="text" placeholder="Rating out of 5" name='rating' className="input mt-2 input-bordered w-full" />
+                <input type="text" placeholder="Comment" name='comment' className="input mt-2 input-bordered w-full" />
+                <textarea className="textarea textarea-bordered w-full mt-2 h-32" name='description' placeholder="Description"></textarea>
                 <button className='bg-green-500 p-3 text-white font-semibold rounded-lg'>Sumbit Your Review</button>
             </form>
         </div>
