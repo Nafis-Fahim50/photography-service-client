@@ -5,13 +5,13 @@ import useTitle from '../../../Hooks/useTitle';
 
 const Update = () => {
     const review = useLoaderData();
-    const {name, serviceName, email} = review;
+    const {name, serviceName, email, rating, comment, description} = review;
     const [updateReview, setUpdateReview] = useState(review);
     useTitle('Update Review')
 
     const handleUpdateReview = event => {
         event.preventDefault();
-        fetch(`https://nafis-photography-server.vercel.app/review/${review._id}`, {
+        fetch(`http://localhost:5000/review/${review._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -42,9 +42,9 @@ const Update = () => {
                 <p>Email: {email}</p>
             </div>
             <form onSubmit={handleUpdateReview} className='bg-zinc-200 p-10 w-full lg:w-1/2 container mx-auto mt-5 shadow-lg rounded-lg mb-10'>
-                <input onChange={handleInputChange} type="text" placeholder="Rating out of 5" name='rating' className="input mt-2 input-bordered w-full" />
-                <input onChange={handleInputChange}  type="text" placeholder="Comment" name='comment' className="input mt-2 input-bordered w-full" />
-                <textarea onChange={handleInputChange}  className="textarea textarea-bordered w-full mt-2 h-32" name='description' placeholder="Description"></textarea>
+                <input onChange={handleInputChange} type="text" placeholder="Rating out of 5" defaultValue={rating} name='rating' className="input mt-2 input-bordered w-full" />
+                <input onChange={handleInputChange}  type="text" placeholder="Comment" name='comment' defaultValue={comment} className="input mt-2 input-bordered w-full" />
+                <textarea onChange={handleInputChange}  className="textarea textarea-bordered w-full mt-2 h-32" name='description' defaultValue={description} placeholder="Description"></textarea>
                 <button type='submit' className='bg-green-500 p-3 mt-2 text-white font-semibold rounded-lg'>Sumbit Your Review</button>
             </form>
         </div>

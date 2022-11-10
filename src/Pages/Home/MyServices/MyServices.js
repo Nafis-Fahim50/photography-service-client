@@ -4,10 +4,15 @@ import MyServicesCard from './MyServicesCard';
 const MyServices = () => {
     const [myServices, setMyServices] = useState([])
     useEffect(()=>{
-        fetch('https://nafis-photography-server.vercel.app/services')
+        fetch('http://localhost:5000/services')
         .then(res => res.json())
         .then(data => setMyServices(data))
     },[])
+
+    if(myServices.length === 0){
+        return <button className="btn loading mx-auto my-12 ml-96">loading</button>
+    }
+
     return (
         <div className='mt-10'>
             <p className='text-orange-500 text-center font-semibold'>My Services</p>

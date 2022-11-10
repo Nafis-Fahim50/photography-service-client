@@ -28,7 +28,7 @@ const Login = () => {
                     email: user.email
                 }
                 // get jwt token from server
-                fetch('https://nafis-photography-server.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -42,7 +42,9 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
             .catch(err => {
-                toast.error(err.message)
+                toast.error(err.message);
+                window.location.reload(false);
+
             })
     }
 
@@ -60,7 +62,7 @@ const Login = () => {
                     email: user.email
                 }
                 // get jwt token from server
-                fetch('https://nafis-photography-server.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

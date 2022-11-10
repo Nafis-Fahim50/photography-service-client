@@ -30,7 +30,7 @@ const AddService = () => {
             price
         }
 
-        fetch('https://nafis-photography-server.vercel.app/allservices', {
+        fetch('http://localhost:5000/allservices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

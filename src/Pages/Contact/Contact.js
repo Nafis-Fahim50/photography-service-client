@@ -1,8 +1,10 @@
 import React from 'react';
 import { FaFacebook, FaGoogle, FaInstagram, FaLinkedin, FaMicrosoft, FaTwitter, FaYahoo } from 'react-icons/fa';
+import useTitle from '../../Hooks/useTitle';
 
 
 const Contact = () => {
+    useTitle('Contact Me')
     return (
         <div className='mt-10'>
             <h1 className='text-3xl text-orange-500 font-bold text-center'>Contact With Me</h1>
