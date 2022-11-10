@@ -1,3 +1,25 @@
+# Project Overview
+
+* Website Name: Nafis Photography
+
+* Live Website Link: https://nafis-photography.web.app/
+
+# Website features and functionality
+
+* Different kind of wedding photography service.
+* Purchased any service.
+* Add Review
+* User Signup and Login system.
+* Photography Blog.
+
+# Used Technologies
+
+* Popular JavaScript Library React.
+* Firebase Authetication System.
+* Tailwind CSS.
+* Tailwind CSS component library daisyUI.
+* React-router, Hot toast, React icon, Photoview.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
