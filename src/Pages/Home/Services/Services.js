@@ -1,19 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import React, { useEffect, useState } from 'react';
 import useTitle from '../../../Hooks/useTitle';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
-    const {loading} = useContext(AuthContext);
     const [services, setServices] = useState([])
     useTitle('Services')
     useEffect(() => {
-        fetch('http://localhost:5000/allservices')
+        fetch('https://nafis-photography-server.vercel.app/allservices')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
 
-    if(loading){
+    if(services.length === 0){
         return <button className="btn loading mx-auto my-12 ml-96">loading</button>
     }
 

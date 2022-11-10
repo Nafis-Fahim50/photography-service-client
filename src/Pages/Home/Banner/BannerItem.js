@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './BannerItem.css'
 const BannerItem = ({ slider }) => {
     const { image, id, next, prev } = slider;
@@ -22,7 +23,9 @@ const BannerItem = ({ slider }) => {
                 </p>
             </div>
             <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 mt-16 lg:mt-40 top-1/4">
-                <button className="p-2 lg:p-3 mt-24 rounded-lg font-semibold bg-orange-500 text-black mr-5">Contact Me</button>
+                <Link to='/contact'>
+                    <button className="p-2 lg:p-3 mt-24 rounded-lg font-semibold bg-orange-500 text-black mr-5">Contact Me</button>
+                </Link>
             </div>
         </div>
     );
