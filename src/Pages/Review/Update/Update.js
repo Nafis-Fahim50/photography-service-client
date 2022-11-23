@@ -11,7 +11,7 @@ const Update = () => {
 
     const handleUpdateReview = event => {
         event.preventDefault();
-        fetch(`http://localhost:5000/review/${review._id}`, {
+        fetch(`https://nafis-photography-server.vercel.app/review/${review._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

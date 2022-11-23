@@ -10,7 +10,7 @@ const MyReview = () => {
     useTitle('My Review')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userReview?email=${user?.email}`,{
+        fetch(`https://nafis-photography-server.vercel.app/userReview?email=${user?.email}`,{
             headers:{
                 authorization:`Bearer ${localStorage.getItem('access-token')}`
             }
@@ -27,7 +27,7 @@ const MyReview = () => {
     const handleDeleted = id =>{
         const processed = window.confirm('Are you sure to delete this item?');
         if(processed){
-            fetch(`http://localhost:5000/userReview/${id}`,{
+            fetch(`https://nafis-photography-server.vercel.app/userReview/${id}`,{
                 method: 'DELETE'
             })
         .then(res => res.json())

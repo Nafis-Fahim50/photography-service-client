@@ -7,7 +7,7 @@ const MyReviewTable = ({ review, handleDeleted }) => {
 
     const [reviewService, setReviewService] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://nafis-photography-server.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setReviewService(data))
     }, [service])
