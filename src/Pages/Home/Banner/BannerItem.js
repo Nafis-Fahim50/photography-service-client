@@ -16,7 +16,7 @@ const BannerItem = ({ slider }) => {
                 <p className='text-white mt-24 font-semibold'>Hey there! I'm Nafis Fahim</p>
             </div>
             <div className="absolute flex justify-end transform -translate-y-1/2 left-24 mt-5 lg:mt-10 top-1/4">
-                <p className='lg:text-4xl mt-24 font-bold text-orange-500'>Wedding & Event Photographer</p>
+                <p className='lg:text-4xl mt-24 font-extrabold text-rose-500'>Wedding & Event Photographer</p>
             </div>
             <div className="hidden lg:block absolute flex justify-end transform -translate-y-1/2 w-2/5 left-24  mt-12 lg:mt-24 top-1/4">
                 <p className='text-white mt-24 font-semibold'>If you are looking for best wedding photography service? Then here you can find different type of wedding photography services.
