@@ -12,8 +12,8 @@ const Contact = () => {
                 <div className='mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4'>
                     <a className='text-xl' href="https://web.facebook.com/nafisfahim28" target='_blank' rel="noopener noreferrer"><FaFacebook className='inline text-blue-700 mr-2 w-10 h-10'></FaFacebook>Facebook</a>
                     <a className='text-xl' href="https://twitter.com/NafisFahim4?fbclid=IwAR0yMbk2nxFN5D5nOAbHO2EA6gSIb5RcDRnX_YKkSotAwV5TtTn4hJI9anc" target='_blank' rel="noopener noreferrer"><FaTwitter className='inline text-sky-600 mr-2 w-10 h-10'></FaTwitter>Twitter</a>
-                    <a className='text-xl' href="https://www.linkedin.com/in/nafis-fahim-2b73801a4/" target='_blank' rel="noopener noreferrer"><FaLinkedin className='inline text-sky-600 mr-2 w-10 h-10'></FaLinkedin>LinkedIn</a>
-                    <a className='text-xl' href="https://www.instagram.com/nafis_fahim_" target='_blank' rel="noopener noreferrer"><FaInstagram className='inline text-rose-600 mr-2 w-10 h-10'></FaInstagram>Instagram</a>
+                    <a className='text-xl' href="https://www.linkedin.com/in/ebne-nafis-fahim/" target='_blank' rel="noopener noreferrer"><FaLinkedin className='inline text-sky-600 mr-2 w-10 h-10'></FaLinkedin>LinkedIn</a>
+                    <a className='text-xl' href="https://www.instagram.com/nafis_fahim__" target='_blank' rel="noopener noreferrer"><FaInstagram className='inline text-rose-600 mr-2 w-10 h-10'></FaInstagram>Instagram</a>
                 </div>
                 <div className='mt-10'>
                     <h1 className='text-2xl text-center text-orange-500 font-bold'>Send Email</h1>
